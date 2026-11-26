@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% set body_page = 'karsilastir' %}
+{% block main %}
+<section class="sayfa-baslik">
+  <div class="wrap">
+    <h1>Modelleri karşılaştır</h1>
+    <p class="lead">Aynı kategoriden en fazla üç model seç. Her satırda en iyi değer vurgulanır.</p>
+  </div>
+</section>
+<section class="bolum bolum-ilk">
+  <div class="wrap">
+    <div class="cmp-sec">
+      <label class="alan"><span>Model ekle</span>
+        <select data-cmp-add><option value="">Model seç</option></select>
+      </label>
+    </div>
+    <div data-compare>
+      <noscript><p class="bos">Karşılaştırma tablosu için JavaScript gerekiyor.</p></noscript>
+    </div>
+    <p class="dipnot">Fiyatlar kargo dahil en düşük toplamdır. "Üretici iddiası" yazan değerler kullanım koşullarına göre değişir.</p>
+  </div>
+</section>
+{% endblock %}

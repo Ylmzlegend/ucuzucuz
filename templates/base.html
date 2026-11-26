@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr" data-root="{{ root }}" data-explicit="{{ '1' if explicit else '0' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title %}{{ title }} | {% endif %}{{ cfg.site_name }}</title>
+<meta name="description" content="{{ description or cfg.tagline }}">
+{% if demo %}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
+{% if canonical %}
+<link rel="canonical" href="{{ canonical }}">
+{% endif %}
+<link rel="icon" href="{{ link('assets/favicon.svg') }}" type="image/svg+xml">
+{% if cfg.web_fonts %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;display=swap">
+{% endif %}
+<link rel="stylesheet" href="{{ link('assets/style.css') }}">
+{% block head %}{% endblock %}
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="ic-bisiklet" viewBox="0 0 48 48"><circle cx="11" cy="31" r="7.5"/><circle cx="37" cy="31" r="7.5"/><path d="M11 31 L19 16 L25 31 Z M19 16 H32 L25 31 M32 16 L37 31 M32 16 L30 11 H35 M19 16 L18 12 H14"/></symbol>
+  <symbol id="ic-scooter" viewBox="0 0 48 48"><circle cx="10" cy="37" r="5"/><circle cx="39" cy="37" r="5"/><path d="M10 37 L14 32 H35 M36 32 L33 9 M29 9 H38"/></symbol>
+  <symbol id="ic-telefon" viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M21 37 H27"/></symbol>
+  <symbol id="ic-laptop" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="20" rx="2"/><path d="M5 37 L10 30 H38 L43 37 Z"/></symbol>
+  <symbol id="ic-tv" viewBox="0 0 48 48"><rect x="5" y="9" width="38" height="25" rx="2"/><path d="M18 41 H30 M24 34 V41"/></symbol>
+  <symbol id="ic-robot" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="19" r="4.5"/><path d="M14 31 H34 M11 15 A16 16 0 0 1 37 15"/></symbol>
+  <symbol id="ic-konsol" viewBox="0 0 48 48"><path d="M14 15 H34 C40 15 44 26 44 32 C44 37 40 38 37 35 L33 31 H15 L11 35 C8 38 4 37 4 32 C4 26 8 15 14 15 Z M13 20 V27 M9.5 23.5 H16.5"/><circle cx="32" cy="21" r="1.6"/><circle cx="36" cy="26" r="1.6"/></symbol>
+  <symbol id="ic-etiket" viewBox="0 0 48 48"><path d="M5 25 L25 5 H43 V23 L23 43 Z"/><circle cx="35" cy="13" r="2.6"/></symbol>
+</svg>
+<a class="atla" href="#icerik">İçeriğe geç</a>
+{% if demo %}
+<div class="demo-bar" role="note">Bu site demodur. Marka, satıcı ve fiyatların hepsi uydurmadır; gerçek bir ürün veya fiyat değildir.</div>
+{% endif %}
+<header class="ust">
+  <div class="wrap ust-ic">
+    <a class="logo" href="{{ link('') }}" aria-label="{{ cfg.site_name }} ana sayfa">
+      <svg class="ikon logo-ikon" aria-hidden="true"><use href="#ic-etiket"/></svg>
+      <span>ucuz<b>ucuz</b></span>
+    </a>
+    <nav class="menu" aria-label="Ana menü">
+      <a href="{{ link('karsilastir/') }}"{% if body_page == 'karsilastir' %} aria-current="page"{% endif %}>Karşılaştır</a>
+      <a href="{{ link('nasil-calisiyoruz/') }}"{% if body_page == 'about' %} aria-current="page"{% endif %}>Nasıl çalışıyoruz</a>
+    </nav>
+  </div>
+  <nav class="kat-serit" aria-label="Kategoriler">
+    <div class="wrap kat-serit-ic">
+      {% for a in aktif %}
+      <a href="{{ link(a.key ~ '/') }}"{% if kat_key is defined and kat_key == a.key %} aria-current="{{ 'page' if p is not defined else 'true' }}"{% endif %}>
+        <svg class="ikon" aria-hidden="true"><use href="#ic-{{ a.kat.ikon }}"/></svg>{{ a.kat.ad }}
+      </a>
+      {% endfor %}
+    </div>
+  </nav>
+</header>
+<main id="icerik">
+{% block main %}{% endblock %}
+</main>
+<footer class="alt">
+  <div class="wrap alt-ic">
+    <p><strong>{{ cfg.site_name }}</strong> {{ year }}. Fiyatlar satıcıların sayfalarından alınır ve her teklifin yanında kontrol tarihi yazar.</p>
+    <p><a href="{{ link('nasil-calisiyoruz/') }}">Nasıl hesaplıyoruz</a>{% if cfg.iletisim %}, <a href="mailto:{{ cfg.iletisim }}">{{ cfg.iletisim }}</a>{% endif %}</p>
+  </div>
+</footer>
+<div class="kbar" data-cmpbar hidden>
+  <div class="wrap kbar-ic">
+    <span data-cmptext>0 model seçildi</span>
+    <a class="btn btn-ana btn-kucuk" data-cmplink href="{{ link('karsilastir/') }}">Karşılaştır</a>
+  </div>
+</div>
+<script src="{{ link('assets/data.js') }}"></script>
+<script src="{{ link('assets/app.js') }}" defer></script>
+</body>
+</html>

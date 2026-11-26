@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% set body_page = 'about' %}
+{% block main %}
+<section class="sayfa-baslik">
+  <div class="wrap">
+    <h1>Nasıl çalışıyoruz</h1>
+    <p class="lead">Bir teklifin listede neden o sırada durduğunu buradan kontrol edebilirsin.</p>
+  </div>
+</section>
+<section class="bolum bolum-ilk">
+  <div class="wrap yazi">
+    <h2>Kasada ödeyeceğin fiyat</h2>
+    <p>Toplam fiyat, ürün fiyatı ile kargo ücretinin toplamıdır. Sıralama bu toplama göre yapılır. Taksit vade farkı hesaba katılmaz; peşin fiyat esas alınır.</p>
+
+    <h2>Garanti</h2>
+    <p>Her teklifte garanti türü ayrı yazılır. "Resmi garanti", üreticinin veya Türkiye resmi distribütörünün garantisidir ve yalnızca satıcının sayfasında açıkça belirtildiğinde işaretlenir. İthalatçı firmanın verdiği garanti "İthalatçı garantisi", satıcının kendi verdiği garanti "Satıcı garantisi" olarak ayrı gösterilir. Belirtilmemişse "Garanti belirtilmemiş" yazarız. En ucuz teklif resmi garantili değilse, ürün sayfasında resmi garantili en düşük teklifi ve aradaki farkı ayrıca gösteririz.</p>
+
+    <h2>Fiyat ne kadar taze</h2>
+    <p>Her teklifin yanında son kontrol tarihi yazar. {{ cfg.stale_days_warn }} günü geçen teklif uyarı işaretiyle gösterilir. {{ cfg.stale_days_exclude }} günden eski veya stokta olmayan teklif listede kalır ama "en ucuz" hesabına girmez. Güncel teklifi kalmayan modelde fiyat göstermeyiz.</p>
+
+    <h2>Veriyi nasıl topluyoruz</h2>
+    <p>{{ cfg.veri_notu }}</p>
+
+    <h2>Sıralama ve gelir</h2>
+    <p>Sıralama yalnızca toplam maliyete göre yapılır; hiçbir satıcı ödeme karşılığında üst sıraya çıkamaz. {{ cfg.gelir_notu }}</p>
+
+    <h2>Kullanım koşulları ve yasal notlar</h2>
+    <p>Ürün sayfalarındaki ehliyet, plaka ve kullanım koşulu notları bilgilendirme amaçlıdır. Satın almadan önce güncel mevzuatı resmi kaynaktan kontrol et. "Üretici iddiası" yazan değerler (menzil, çalışma süresi gibi) kullanım koşullarına göre değişir.</p>
+
+    {% if cfg.iletisim %}
+    <h2>Hata gördün mü</h2>
+    <p>Yanlış fiyat, eksik teklif veya hatalı bilgi için <a href="mailto:{{ cfg.iletisim }}">{{ cfg.iletisim }}</a> adresine yaz.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

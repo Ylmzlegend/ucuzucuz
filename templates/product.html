@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% from "_macros.html" import ikon, garanti, kontrol, kargo, git with context %}
+{% block head %}
+{% if ld %}
+<script type="application/ld+json">{{ ld }}</script>
+{% endif %}
+{% endblock %}
+{% block main %}
+<div class="wrap">
+  <nav class="kirinti" aria-label="Bulunduğun yer">
+    <a href="{{ link('') }}">Ana sayfa</a>
+    <span aria-hidden="true">/</span>
+    <a href="{{ link(kat_key ~ '/') }}">{{ kat.ad }}</a>
+  </nav>
+  <div class="urun-baslik">
+    <div class="urun-ikon">{{ ikon(kat.ikon) }}</div>
+    <div>
+      <h1>{{ p.ad }}</h1>
+      <p class="ozet">{{ p.ozet }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap urun-izgara">
+  <div class="urun-ana">
+    <section aria-labelledby="h-teklifler">
+      <h2 id="h-teklifler">Teklifler, kasada ödeyeceğin tutara göre</h2>
+      {% if p.teklifler %}
+      <div class="tablo-sar">
+      <table class="tablo">
+        <caption class="sr">{{ p.ad }} için satıcı teklifleri, toplam maliyete göre sıralı</caption>
+        <thead>
+          <tr>
+            <th scope="col">Satıcı</th>
+            <th scope="col" class="sag">Ürün fiyatı ve kargo</th>
+            <th scope="col" class="sag">Toplam</th>
+            <th scope="col">Garanti</th>
+            <th scope="col"><span class="sr">Satıcıya git</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for o in p.teklifler %}
+          <tr class="{{ 'en-ucuz' if p.best and o.id == p.best.id }}{{ ' pasif' if not o.gecerli }}">
+            <td data-label="Satıcı">
+              <div class="hucre">
+                <strong>{{ o.satici.ad }}</strong>
+                <span class="sat-tip">{% if o.satici.platform and o.satici.tip == 'pazaryeri' %}{{ o.satici.platform }}'un kendi satışı{% elif o.satici.platform %}{{ o.satici.platform }} satıcısı{% else %}{{ cfg.satici_tipleri[o.satici.tip] }}{% endif %}</span>
+                {{ kontrol(o) }}
+                {% if not o.stok %}<span class="rozet rozet-pasif">Stokta yok</span>
+                {% elif o.eski %}<span class="rozet rozet-pasif">Fiyat eski olabilir, en ucuz hesabına katılmadı</span>{% endif %}
+              </div>
+            </td>
+            <td data-label="Ürün fiyatı ve kargo" class="sag sayi">
+              <div class="hucre hucre-sag">
+                <span>{{ o.fiyat|tl }}</span>
+                <span class="sat-tip">{% if o.kargo is none %}kargo belirtilmemiş{% elif o.kargo %}+ {{ o.kargo|tl }} kargo{% else %}kargo ücretsiz{% endif %}</span>
+                {% if o.not %}<span class="teklif-not">{{ o.not }}</span>{% endif %}
+              </div>
+            </td>
+            <td data-label="Toplam" class="sag sayi toplam">{{ o.toplam|tl }}{% if o.kargo is none %}<span class="sat-tip">+ kargo</span>{% endif %}</td>
+            <td data-label="Garanti">{{ garanti(o) }}</td>
+            <td class="git">{{ git(o) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+      {% else %}
+      <p class="bos">Bu model için henüz teklif girilmedi.</p>
+      {% endif %}
+    </section>
+
+    <section aria-labelledby="h-gecmis">
+      <h2 id="h-gecmis">Fiyat geçmişi</h2>
+      {% if p.grafik %}
+      <div class="grafik-sar">{{ p.grafik }}</div>
+      <p class="dipnot">Çizgi, o gün geçerli en düşük toplam fiyatı gösterir.</p>
+      {% else %}
+      <p class="bos">Grafik için yeterli geçmiş birikmedi. Bir haftadan uzun fiyat kaydı oluşunca burada görünür.</p>
+      {% endif %}
+    </section>
+
+    <section aria-labelledby="h-ozellik">
+      <h2 id="h-ozellik">Özellikler</h2>
+      <dl class="ozellik">
+        {% for o in kat.ozellikler if p.specs[o.key] is not none %}
+        <div><dt>{{ o.ad }}{% if o.iddia %} (üretici iddiası){% endif %}</dt><dd>{{ spec_deger(o, p.specs[o.key]) }}</dd></div>
+        {% endfor %}
+        {% if p.gtin %}<div><dt>Barkod (GTIN)</dt><dd>{{ p.gtin }}</dd></div>{% endif %}
+      </dl>
+      {% if p.aciklama %}<p>{{ p.aciklama }}</p>{% endif %}
+    </section>
+  </div>
+
+  <aside class="urun-yan">
+    {% if p.best %}
+    <div class="fis">
+      <p class="fis-ust">{{ "En düşük fiyat (kargo hariç)" if p.best.kargo_bilinmiyor else "Kasada ödeyeceğin en düşük tutar" }}</p>
+      <p class="fis-buyuk">{{ p.best.toplam|tl }}</p>
+      <dl class="fis-dok">
+        <div><dt>Ürün fiyatı</dt><dd>{{ p.best.fiyat|tl }}</dd></div>
+        <div><dt>Kargo</dt><dd>{{ kargo(p.best) }}</dd></div>
+      </dl>
+      <p class="fis-satici"><strong>{{ p.best.satici.ad }}</strong>{% if p.best.satici.platform %}<span class="sat-tip">{{ p.best.satici.platform }}</span>{% endif %}</p>
+      {% if p.best.not %}<p class="teklif-not">{{ p.best.not }}</p>{% endif %}
+      <p class="fis-meta">{{ garanti(p.best) }} {{ kontrol(p.best) }}</p>
+      {{ git(p.best, "btn btn-ana btn-tam") }}
+      {% if p.best.kargo_bilinmiyor %}<p class="fis-uyari">Bu ilanda kargo ücreti net değil; tutara kargo eklenebilir.</p>{% endif %}
+    </div>
+
+    <div class="bilgi">
+      {% if p.etiket_farki %}
+      <p><strong>Etiket fiyatına aldanma.</strong> En düşük etiket fiyatı {{ p.etiket_en_dusuk.satici.ad }}'de ({{ p.etiket_en_dusuk.fiyat|tl }}), ama kargoyla {{ p.etiket_en_dusuk.toplam|tl }} ediyor. Kasada {{ p.etiket_farki|tl }} fazla ödersin.</p>
+      {% endif %}
+      {% if p.resmi_fark %}
+      <p><strong>En ucuz teklif resmi garantili değil.</strong> {{ cfg.garanti_tipleri[p.best.garanti_tipi] }} ile satılıyor. Resmi garantili en düşük teklif {{ p.best_resmi.satici.ad }}'de, {{ p.best_resmi.toplam|tl }} ({{ p.resmi_fark|tl }} daha fazla).</p>
+      {% elif not p.resmi_var %}
+      <p><strong>Resmi garantili teklif yok.</strong> Şu an hiçbir teklifte resmi garanti belirtilmiyor. Satın almadan önce garanti kapsamını satıcıya sor.</p>
+      {% endif %}
+      {% if p.deger %}
+      <p>Toplam fiyat {{ kat.deger.etiket }} {{ p.deger|round(1)|num }} TL ediyor.</p>
+      {% endif %}
+      {% if p.fark_tl is not none %}
+      <p>En pahalı teklif {{ p.fark_tl|tl }} (%{{ p.fark_pct|round|int }}) daha yüksek.</p>
+      {% endif %}
+      {% if p.son30 %}
+      <p>Son {{ cfg.drop_window_days }} günde en düşük toplam fiyat {{ p.son30.min|tl }} ile {{ p.son30.max|tl }} arasında kaldı, ortalaması {{ p.son30.ort|tl }}.</p>
+      {% endif %}
+      {% if p.dusus_pct %}
+      <p><strong>Fiyatı düştü.</strong> {{ cfg.drop_window_days }} gün öncesine göre {{ p.dusus_tl|tl }} (%{{ p.dusus_pct|round|int }}) daha ucuz.</p>
+      {% endif %}
+    </div>
+    {% else %}
+    <div class="fis">
+      <p class="fis-ust">Güncel fiyat yok</p>
+      <p>Bu modelin tekliflerinin hepsi eski veya stokta yok. Eski fiyatı "en ucuz" diye göstermiyoruz.</p>
+    </div>
+    {% endif %}
+
+    {% if p.yasal_not %}
+    <p class="yasal">{{ p.yasal_not }}</p>
+    {% endif %}
+    <p class="cmp-satir"><label class="cmp"><input type="checkbox" data-cmp data-kat="{{ p.kategori }}" value="{{ p.id }}"> Karşılaştırmaya ekle</label></p>
+  </aside>
+</div>
+
+{% if benzer %}
+<section class="bolum">
+  <div class="wrap">
+    <h2>Benzer fiyatlı modeller</h2>
+    <ul class="benzer">
+      {% for q in benzer %}
+      <li>
+        <a href="{{ link(q.path) }}">{{ q.ad }}</a>
+        <span class="sayi">{{ q.best.toplam|tl }}</span>
+        <span class="ozet">{{ q.ozet }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

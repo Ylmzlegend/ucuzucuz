@@ -1,0 +1,71 @@
+{% macro ikon(ad, cls="") %}
+<svg class="ikon {{ cls }}" aria-hidden="true" focusable="false"><use href="#ic-{{ ad }}"/></svg>
+{% endmacro %}
+
+{% macro garanti(o) %}
+<span class="rozet rozet-{{ o.garanti_tipi }}">{{ cfg.garanti_tipleri[o.garanti_tipi] }}{% if o.garanti_ay %}, {{ o.garanti_ay }} ay{% endif %}</span>
+{% endmacro %}
+
+{% macro kontrol(o) %}
+<span class="kontrol kontrol-{{ o.kontrol_sinifi }}">{{ o.gun|gun_once }}</span>
+{% endmacro %}
+
+{% macro fark(p, maks) %}
+{% if p.fark_pct is not none %}
+<div class="fark">
+  <div class="fark-bar" aria-hidden="true"><span style="width: {{ [((p.fark_pct / maks) * 100) if maks else 0, 100]|min|round(1) }}%"></span></div>
+  <p class="fark-txt"><strong>{{ p.fark_tl|tl }}</strong> fark, en pahalı teklif %{{ p.fark_pct|round|int }} daha yüksek</p>
+</div>
+{% else %}
+<p class="fark-txt muted">Tek teklif var, fark hesaplanamadı</p>
+{% endif %}
+{% endmacro %}
+
+{% macro kargo(o) %}{% if o.kargo is none %}Belirtilmemiş{% elif o.kargo %}{{ o.kargo|tl }}{% else %}Ücretsiz{% endif %}{% endmacro %}
+
+{% macro git(o, cls="btn btn-kucuk") %}{% if demo %}<span class="{{ cls }} btn-pasif" title="Demo: gerçek bağlantı yok">Mağazaya git</span>{% else %}<a class="{{ cls }}" href="{{ o.url }}" target="_blank" rel="nofollow noopener noreferrer">{% if o.satici.platform %}{{ o.satici.platform }}'da aç{% else %}Mağazaya git{% endif %}</a>{% endif %}{% endmacro %}
+
+{% macro satir(p, maks, kat) %}
+{% set degerli = kat.deger or kat.yasal %}
+<li class="satir{{ '' if degerli else ' satir-degersiz' }}" data-item
+    data-name="{{ p.ara }}" data-id="{{ p.id }}"
+    data-price="{{ p.best.toplam|round|int if p.best else '' }}"
+    data-deger="{{ p.deger|round(1) if p.deger else '' }}"
+    data-spread="{{ p.fark_pct|round(1) if p.fark_pct is not none else '' }}"
+    data-sellers="{{ p.satici_sayisi }}"
+    data-resmi="{{ '1' if p.resmi_var else '0' }}"
+    {% for o in kat.ozellikler if o.tip != 'metin' %}
+    {% set v = p.specs[o.key] %}
+    data-spec-{{ o.key }}="{{ '' if v is none else ((1 if v else 0) if o.tip == 'evet_hayir' else v) }}"
+    {% endfor %}>
+  <div class="satir-ikon">{{ ikon(kat.ikon) }}</div>
+  <div class="satir-ad">
+    <h3><a href="{{ link(p.path) }}">{{ p.ad }}</a></h3>
+    <p class="ozet">{{ p.ozet }}</p>
+  </div>
+  {% if degerli %}
+  <div class="satir-deger">
+    {% if p.deger %}
+    <p><strong class="sayi">{{ p.deger|round(1)|num }} TL</strong> {{ kat.deger.etiket }}</p>
+    {% endif %}
+    {% if p.yasal_kisa %}
+    <p class="uyari-mini">{{ p.yasal_kisa }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+  <div class="satir-fark">{{ fark(p, maks) }}</div>
+  <div class="satir-fiyat">
+    {% if p.best %}
+    <p class="fiyat-buyuk">{{ p.best.toplam|tl }}</p>
+    <p class="fiyat-alt">{{ 'kargo hariç' if p.best.kargo_bilinmiyor else 'kargo dahil' }}, {{ p.satici_sayisi }} teklif{% if p.platformlar|length > 1 %}, {{ p.platformlar|join(' ve ') }}{% endif %}</p>
+    {% if p.resmi_fark %}
+    <p class="fiyat-alt">Resmi garantili en düşük: {{ p.best_resmi.toplam|tl }}</p>
+    {% endif %}
+    {% else %}
+    <p class="fiyat-buyuk muted">Güncel fiyat yok</p>
+    <p class="fiyat-alt">Teklifler eski veya stokta yok</p>
+    {% endif %}
+    <label class="cmp"><input type="checkbox" data-cmp data-kat="{{ p.kategori }}" value="{{ p.id }}"> Karşılaştır</label>
+  </div>
+</li>
+{% endmacro %}

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% from "_macros.html" import ikon, fark with context %}
+{% set body_page = 'home' %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-izgara">
+    <div class="hero-metin">
+      <h1>Etiket fiyatı değil, kasada ödeyeceğin fiyat.</h1>
+      {% set adlar = aktif|map(attribute='kat.ad')|map('lower')|list %}
+      <p class="lead">{{ ((adlar[:-1]|join(', ') ~ ' ve ' ~ adlar[-1]) if adlar|length > 1 else adlar|join(''))|capitalize }} tekliflerini Trendyol ve Hepsiburada genelinde, kargo, garanti türü ve kontrol tarihiyle yan yana koyuyoruz. Listenin en üstündeki, toplamda en ucuz tekliftir.</p>
+      <div class="cta-grup">
+        <a class="btn btn-ana" href="#kategoriler">Kategorilere bak</a>
+        <a class="btn btn-ikinci" href="{{ link('nasil-calisiyoruz/') }}">Nasıl hesaplıyoruz</a>
+      </div>
+    </div>
+    {% if fis %}
+    <a class="fis fis-link" href="{{ link(fis.path) }}" aria-label="{{ fis.ad }} tekliflerine git">
+      <div class="fis-baslik">
+        <strong>{{ fis.ad }}</strong>
+        <span>{{ fis.satici_sayisi }} teklif, {{ fis.gecerli_teklifler[0].son_kontrol|tarih }}</span>
+      </div>
+      <ul class="fis-satirlar">
+        {% for o in fis.gecerli_teklifler[:4] %}
+        <li class="{{ 'en-ucuz' if o.id == fis.best.id }}">
+          <span class="fs-ad">{{ o.satici.ad }}</span>
+          <span class="fs-detay">{{ o.satici.platform }}{% if o.kargo is none %}, kargo belirtilmemiş{% elif o.kargo %}, + {{ o.kargo|tl }} kargo{% else %}, kargo ücretsiz{% endif %}</span>
+          <span class="fs-toplam">{{ o.toplam|tl }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if fis.fark_tl and not fis.etiket_farki %}
+      <p class="fis-not">Aynı model için en pahalı teklif {{ fis.fark_tl|tl }} daha fazla.</p>
+      {% endif %}
+      {% if fis.etiket_farki %}
+      <p class="fis-not">En düşük etiket fiyatı <strong>{{ fis.etiket_en_dusuk.satici.ad }}</strong> ({{ fis.etiket_en_dusuk.fiyat|tl }}), kargoyla {{ fis.etiket_en_dusuk.toplam|tl }} ediyor. Kasada {{ fis.etiket_farki|tl }} fazla ödenirdi.</p>
+      {% endif %}
+    </a>
+    {% endif %}
+  </div>
+</section>
+
+<section class="bolum bolum-ust" id="kategoriler">
+  <div class="wrap">
+    <h2>Kategoriler</h2>
+    <ul class="kat-izgara">
+      {% for a in aktif %}
+      <li>
+        <a href="{{ link(a.key ~ '/') }}">
+          <span class="kat-ikon">{{ ikon(a.kat.ikon) }}</span>
+          <span class="kat-ad">{{ a.kat.ad }}</span>
+          <span class="kat-alt">{{ a.sayi }} model{% if a.maks_fark %}<br>En büyük teklif farkı %{{ a.maks_fark|round|int }}{% endif %}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% if farkli %}
+<section class="bolum">
+  <div class="wrap">
+    <h2>Teklifler arasında en çok fark olan modeller</h2>
+    <p class="bolum-alt">Aynı modeli en ucuz ve en pahalı satıcıdan almak arasındaki toplam fark.</p>
+    <ol class="liste">
+      {% for p in farkli %}
+      <li class="satir satir-ince">
+        <div class="satir-ikon">{{ ikon(cfg.categories[p.kategori].ikon) }}</div>
+        <div class="satir-ad">
+          <h3><a href="{{ link(p.path) }}">{{ p.ad }}</a></h3>
+          <p class="ozet">{{ cfg.categories[p.kategori].ad }}, {{ p.satici_sayisi }} teklif, en düşük {{ p.best.toplam|tl }}</p>
+        </div>
+        <div class="satir-fark satir-fark-genis">{{ fark(p, farkli[0].fark_pct) }}</div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
+{% if dusenler %}
+<section class="bolum">
+  <div class="wrap">
+    <h2>Son {{ cfg.drop_window_days }} günde fiyatı düşenler</h2>
+    <p class="bolum-alt">Bugünkü en düşük toplam fiyat, {{ cfg.drop_window_days }} gün öncekiyle kıyaslanır.</p>
+    <ol class="liste">
+      {% for p in dusenler %}
+      <li class="satir satir-ince">
+        <div class="satir-ikon">{{ ikon(cfg.categories[p.kategori].ikon) }}</div>
+        <div class="satir-ad">
+          <h3><a href="{{ link(p.path) }}">{{ p.ad }}</a></h3>
+          <p class="ozet">Şimdi {{ p.best.toplam|tl }}</p>
+        </div>
+        <div class="satir-fiyat">
+          <p class="fiyat-buyuk dusus">-{{ p.dusus_tl|tl }}</p>
+          <p class="fiyat-alt">%{{ p.dusus_pct|round|int }} düştü</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
+<section class="bolum bolum-kural">
+  <div class="wrap">
+    <h2>Sıralamayı neye göre yapıyoruz</h2>
+    <dl class="kurallar">
+      <div><dt>Toplam maliyet</dt><dd>Ürün fiyatına kargo eklenir. Etiketi ucuz, kargosu pahalı teklif listede ucuz görünmez.</dd></div>
+      <div><dt>Garanti türü</dt><dd>Resmi, ithalatçı ve satıcı garantisi ayrı yazılır. En ucuz teklif resmi garantili değilse, resmi garantili en düşük fiyatı da gösteririz.</dd></div>
+      <div><dt>Fiyatın tazeliği</dt><dd>Her teklifin yanında son kontrol tarihi var. {{ cfg.stale_days_exclude }} günden eski veya stokta olmayan teklif "en ucuz" hesabına girmez.</dd></div>
+    </dl>
+    <p><a href="{{ link('nasil-calisiyoruz/') }}">Hesaplama ayrıntıları</a></p>
+  </div>
+</section>
+{% endblock %}

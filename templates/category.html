@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% from "_macros.html" import satir with context %}
+{% block main %}
+<section class="sayfa-baslik">
+  <div class="wrap">
+    <h1>{{ kat.baslik }}</h1>
+    <p class="lead">{{ kat.aciklama }}</p>
+  </div>
+</section>
+
+<section class="bolum bolum-ilk">
+  <div class="wrap">
+    <form class="filtre" data-filters onsubmit="return false">
+      <label class="alan alan-ara"><span>Model ara</span>
+        <input type="search" name="q" placeholder="Marka veya model" autocomplete="off">
+      </label>
+      <fieldset class="secenekler">
+        <legend>Göster</legend>
+        {% for f in kat.filtreler %}
+        <label><input type="checkbox" data-fkey="{{ f.key }}" data-op="{{ f.op }}" data-val="{{ f.deger }}"> {{ f.ad }}</label>
+        {% endfor %}
+        <label><input type="checkbox" name="resmi"> Resmi garantili teklifi olanlar</label>
+      </fieldset>
+      <label class="alan"><span>Sırala</span>
+        <select name="sort">
+          <option value="fiyat">En düşük toplam fiyat</option>
+          {% if kat.deger %}
+          <option value="deger">En düşük TL ({{ kat.deger.etiket }})</option>
+          {% endif %}
+          <option value="fark">Teklifler arası fark en büyük</option>
+          <option value="satici">En çok teklifi olan</option>
+          {% for o in kat.ozellikler if o.tip == 'sayi' and o.iyi %}
+          <option value="sp:{{ o.key }}:{{ o.iyi }}">{{ o.ad }} ({{ 'en yüksek' if o.iyi == 'max' else 'en düşük' }}{{ ', üretici iddiası' if o.iddia }})</option>
+          {% endfor %}
+        </select>
+      </label>
+    </form>
+
+    <p class="sayac" data-count aria-live="polite">{{ urunler|length }} model</p>
+    <ol class="liste" data-list>
+      {% for p in urunler %}
+      {{ satir(p, maks_fark, kat) }}
+      {% endfor %}
+    </ol>
+    <p class="bos" data-empty hidden>Bu filtrelerle eşleşen model yok. Filtreleri gevşetmeyi dene.</p>
+    {% set iddialar = kat.ozellikler|selectattr('iddia')|map(attribute='ad')|list %}
+    {% if iddialar or kat.deger %}
+    <p class="dipnot">
+      {% if iddialar %}{{ iddialar|join(', ') }} değerleri üreticinin iddiasıdır; kullanım koşullarına göre değişir. {% endif %}
+      {% if kat.deger %}"TL {{ kat.deger.etiket }}", en düşük toplam fiyatın bu değere bölünmesiyle bulunur.{% endif %}
+    </p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,177 @@
+{
+ "tarih": "2026-11-26",
+ "aciklama": "Trendyol ve Hepsiburada ürün sayfalarından 26 Kasım 2026'da okunan fiyatlar. TY satırlarında kargo: ilan 'Kargo Bedava' ise 0, değilse boş. HB satırlarında kargo sayfadan net okunamadığı için boş. HB 'sepette' fiyatları herkese uygulanan sepet indirimli fiyattır.",
+ "urunler": [
+  {"id":"P01","kategori":"e-bisiklet","marka":"RKS","model":"RS3 Pro X","gtin":"","specs":{"motor_w":250,"batarya_wh":360,"menzil_km":40,"hiz_kmh":25,"agirlik_kg":24,"jant_inc":20,"katlanabilir":1},
+   "aciklama":"Satıcı ilanlarına göre 36 V 7,5 veya 10 Ah batarya seçenekleriyle satılıyor; batarya değeri 10 Ah'e göre.",
+   "teklifler":[
+    ["TY","AK TEKNİK ELEKTRONİK",29499,0,"belirsiz",24,"/rks/rs3-pro-x-elektrikli-bisiklet-beyaz-p-315058244","Renk: beyaz"],
+    ["TY","Volt Bike Market",30485,0,"belirsiz",24,"/rks/rs3-pro-x-elektrikli-bisiklet-siyah-p-120306150","Renk: siyah"],
+    ["TY","SUNGURLU 19",30500,0,"belirsiz",24,"/rks/rs3-pro-x-elektrikli-bisiklet-beyaz-p-315058244?merchantId=185308","Renk: beyaz"],
+    ["TY","Depomsun",31000,0,"belirsiz",24,"/rks/rs3-pro-x-elektrikli-bisiklet-beyaz-p-315058244?merchantId=333520","Renk: beyaz"],
+    ["TY","evimponcik",31190,0,"belirsiz",24,"/rks/rs3-pro-x-elektrikli-bisiklet-beyaz-p-315058244?merchantId=127448","Renk: beyaz"],
+    ["TY","AKA TEKNOLOJİ",31194,0,"belirsiz",24,"/rks/rs3-pro-x-elektrikli-bisiklet-beyaz-p-315058244?merchantId=877964","Renk: beyaz"],
+    ["TY","ENVAIGROUP",31600,0,"belirsiz",24,"/rks/rs3-pro-x-elektrikli-bisiklet-siyah-p-120306150?merchantId=789475","Renk: siyah"],
+    ["TY","Vedora",31930,0,"belirsiz",24,"/rks/rs3-pro-x-elektrikli-bisiklet-gumus-gri-p-793624670?merchantId=878688","Renk: gümüş/gri"],
+    ["HB","Pawronix",26775,null,"belirsiz",24,"/rks-rsiii-pro-x-rs3-elektrikli-katlanabilir-bisiklet-silver-p-HBCV00005I59NC","Sepette %15 indirimli fiyat (liste fiyatı 31.500 TL). Renk: silver"]
+   ]},
+  {"id":"P02","kategori":"e-bisiklet","marka":"RKS","model":"BN5 Pro","gtin":"","specs":{"motor_w":250,"batarya_wh":270,"menzil_km":35,"hiz_kmh":25,"jant_inc":20,"katlanabilir":1},
+   "aciklama":"Satıcı ilanlarında 36 V 7,5 Ah ile 10 Ah arasında farklı batarya seçenekleri geçiyor; batarya değeri 7,5 Ah'e göre.",
+   "teklifler":[
+    ["TY","Tekno Likya",27000,0,"belirsiz",24,"/rks/elektrikli-bn5-pro-katlanabilir-bisiklet-siyah-p-1161642581","Renk: siyah"],
+    ["TY","SelmaMert Yıldız",27000,0,"belirsiz",24,"/rks/elektrikli-bn5-pro-katlanabilir-bisiklet-siyah-p-1161642581?merchantId=612301","Renk: siyah"],
+    ["TY","Bike And Art",27200,0,"belirsiz",24,"/rks/elektrikli-bn5-pro-katlanabilir-bisiklet-siyah-p-302662436","Renk: siyah"],
+    ["TY","Volt Bike Market",27300,0,"belirsiz",24,"/rks/elektrikli-bn5-pro-katlanabilir-bisiklet-siyah-p-302662436?merchantId=1271194","Renk: siyah"],
+    ["TY","AKA TEKNOLOJİ",27500,0,"belirsiz",24,"/rks/bn5-pro-elektrikli-bisiklet-gri-p-673828062","Renk: gri"],
+    ["TY","KAPINDA.AVM",27895,0,"belirsiz",24,"/rks/elektrikli-bn5-pro-katlanabilir-bisiklet-siyah-p-302662436?merchantId=519808","Renk: siyah"],
+    ["TY","AK TEKNİK ELEKTRONİK",27999,0,"belirsiz",24,"/rks/bn5-pro-katlanabilir-elektrikli-bisiklet-gri-p-274260959","Renk: gri"],
+    ["TY","OVA MAGAZALARI",28599,0,"belirsiz",24,"/rks/bn5-pro-katlanabilir-elektrikli-bisiklet-gri-p-274260959?merchantId=108129","Renk: gri"],
+    ["HB","Bike And Art",25287.5,null,"belirsiz",24,"/rks-bn5-pro-20-inc-katlanabilir-sehir-bisikleti-7-vites-siyah-renkli-tasarim-p-HBCV000029LH2W","Sepette %15 indirimli fiyat (liste fiyatı 29.750 TL). Renk: siyah"],
+    ["HB","Adilbazaar",27435,null,"belirsiz",24,"/rks-bn5-pro-20-inc-katlanabilir-sehir-bisikleti-7-vites-turkuaz-renkli-tasarim-p-HBCV0000FMWTYB","Hepsiburada Premium üyelerine ek indirim var; bu fiyat herkes için. Renk: turkuaz"]
+   ]},
+  {"id":"P03","kategori":"e-bisiklet","marka":"RKS","model":"Nitro Pro","gtin":"","specs":{"motor_w":250,"menzil_km":50,"hiz_kmh":25,"jant_inc":20,"katlanabilir":1},
+   "aciklama":"Kalın tekerli katlanır model.",
+   "teklifler":[
+    ["TY","ECER OTOMOTİV",28399,0,"belirsiz",24,"/rks/nitro-pro-katlanabilir-elektrikli-bisiklet-p-930470850",""],
+    ["TY","Purtaş teknoloji",28449,0,"belirsiz",24,"/rks/nitro-pro-katlanabilir-elektrikli-bisiklet-p-930470850?merchantId=662343",""],
+    ["TY","YAMAN BEYAZ EŞYA",28499,0,"belirsiz",24,"/rks/nitro-pro-katlanabilir-elektrikli-bisiklet-p-930470850?merchantId=138641",""],
+    ["TY","eniyi",29999,0,"belirsiz",24,"/rks/nitro-pro-katlanabilir-elektrikli-bisiklet-p-930470850?merchantId=957685",""],
+    ["TY","SUNGURLU 19",29999,0,"belirsiz",24,"/rks/nitro-pro-katlanabilir-elektrikli-bisiklet-p-930470850?merchantId=185308",""],
+    ["HB","ECER OTOMOTİV",24011.65,null,"belirsiz",null,"/rks-nitro-pro-katlanabilir-elektrikli-bisiklet-pm-HBC0000H4KC7D","Sepette %15 indirimli fiyat (liste fiyatı 28.249 TL)"]
+   ]},
+  {"id":"P04","kategori":"e-bisiklet","marka":"Skyjet","model":"Robusto Premium","gtin":"","specs":{"motor_w":750,"batarya_wh":624,"menzil_km":45,"hiz_kmh":25,"jant_inc":20,"katlanabilir":1},
+   "aciklama":"İlanlarda 750 W motor ve 48 V 13 Ah batarya yazıyor.",
+   "teklifler":[
+    ["TY","TVSHOOP",43599,0,"belirsiz",24,"/skyjet/robusto-premium-elektrikli-bisiklet-750w-p-960197360","Renk: beyaz"],
+    ["TY","ORKENMOTOR",45999,0,"belirsiz",24,"/skyjet/robusto-premium-elektrikli-bisiklet-750w-p-960197360?merchantId=476446","Renk: beyaz"],
+    ["TY","MAG motor",47000,0,"belirsiz",24,"/skyjet/robusto-premium-elektrikli-bisiklet-750w-p-960197325","Renk: siyah"],
+    ["TY","E-BİKE DÜNYASI",49000,0,"belirsiz",24,"/skyjet/robusto-premium-elektrikli-bisiklet-750w-p-960197325?merchantId=470031","Renk: siyah"],
+    ["TY","MUHİTTİNOĞLU MOTOR",52000,0,"belirsiz",24,"/skyjet/robusto-premium-elektrikli-bisiklet-750w-p-960197325?merchantId=1255858","Renk: siyah"],
+    ["HB","Yüksel Ticaret Mağazaları",35911.65,null,"belirsiz",null,"/skyjet-robusto-premium-elektrikli-bisiklet-p-HBCV00009IEC87","Sepette %15 indirimli fiyat (liste fiyatı 42.249 TL)"],
+    ["HB","HESAPLImarket",36550,null,"belirsiz",null,"/skyjet-robusto-premium-elektrikli-bisiklet-p-HBCV00009HV94C","Sepette %15 indirimli fiyat (liste fiyatı 43.000 TL)"]
+   ]},
+  {"id":"P05","kategori":"e-bisiklet","marka":"Skyjet","model":"GTIII Pro","gtin":"","specs":{"menzil_km":60,"jant_inc":20,"katlanabilir":1},
+   "aciklama":"İlanlar ayna, çanta veya el gazı hediyesiyle satılıyor; motor gücü ilanlarda net değil.",
+   "teklifler":[
+    ["TY","MOTOGARAGE MOTORLU ARAÇLAR",54699,0,"belirsiz",24,"/skyjet/gtiii-pro-ayna-ve-canta-hediyeli-p-1215831566","Ayna ve çanta hediyeli"],
+    ["TY","ALTUNEL BİSİKLET",55000,0,"belirsiz",24,"/skyjet/gtiii-pro-ayna-ve-canta-hediyeli-p-1215831566?merchantId=344081","Ayna ve çanta hediyeli"],
+    ["TY","The best of bike",58000,0,"belirsiz",24,"/skyjet/gtiii-pro-elektrikli-bisiklet-ayna-canta-ve-el-gazi-hediyeli-p-1140497601","Ayna, çanta ve el gazı hediyeli"],
+    ["TY","MUHİTTİNOĞLU MOTOR",60000,0,"belirsiz",24,"/skyjet/gtiii-pro-elektrikli-bisiklet-ayna-canta-ve-el-gazi-hediyeli-p-1140497601?merchantId=1255858","Ayna, çanta ve el gazı hediyeli"]
+   ]},
+  {"id":"P06","kategori":"e-bisiklet","marka":"Ape Ryder","model":"Mandrill Ultra","gtin":"","specs":{"batarya_wh":720,"menzil_km":60,"hiz_kmh":25,"jant_inc":20,"katlanabilir":0},
+   "aciklama":"Motor gücü ilanlarda 250 W ve 1000 W olarak farklı yazılıyor; satın almadan önce satıcıdan yazılı teyit al. Batarya 48 V 15 Ah.",
+   "teklifler":[
+    ["TY","LİONCHAİN",59898,0,"belirsiz",24,"/ape-ryder/mandrill-ultra-elektrikli-bisiklet-ayna-ve-canta-hediyeli-p-1215929062","Ayna ve çanta hediyeli"],
+    ["TY","TVSHOOP",63990,0,"belirsiz",24,"/ape-ryder/mandrill-ultra-1000w-elektrikli-bisiklet-ayna-canta-ve-el-gazi-hediyeli-p-1128498437","Ayna, çanta ve el gazı hediyeli"],
+    ["TY","MAG motor",65500,0,"belirsiz",24,"/ape-ryder/mandrill-ultra-1000w-elektrikli-bisiklet-ayna-canta-ve-el-gazi-hediyeli-p-1128498437?merchantId=1194002","Ayna, çanta ve el gazı hediyeli"],
+    ["TY","The best of bike",66000,0,"belirsiz",24,"/ape-ryder/mandrill-ultra-1000w-elektrikli-bisiklet-ayna-canta-ve-el-gazi-hediyeli-p-1128498437?merchantId=1250577","Ayna, çanta ve el gazı hediyeli"],
+    ["HB","Yüksel Ticaret Mağazaları",49894.15,null,"belirsiz",null,"/ape-ryder-mandrill-ultra-elektrikli-bisiklet-ayna-ve-canta-hediyeli-pm-HBC0000MZD2MD","Sepette %15 indirimli fiyat (liste fiyatı 58.699 TL). Ayna ve çanta hediyeli"]
+   ]},
+  {"id":"P07","kategori":"robot-supurge","marka":"Roborock","model":"Q8 Max Pro","gtin":"6936905901415","specs":{"haritalama":"Lidar","paspas":1},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","ALDIMGİTTİ",17223,0,"resmi_uretici",24,"/roborock/vacuum-q8-max-pro-robot-supurge-beyaz-p-929960380","Renk: beyaz"],
+    ["TY","BittiBitiyor",17299,0,"resmi_uretici",24,"/roborock/vacuum-q8-max-pro-robot-supurge-beyaz-p-929960380?merchantId=104870","Renk: beyaz"],
+    ["TY","SATÜRN",17380,0,"resmi_uretici",24,"/roborock/vacuum-q8-max-pro-robot-supurge-beyaz-p-929960380?merchantId=514600","Renk: beyaz"],
+    ["TY","BIGTech",17399,0,"resmi_uretici",24,"/roborock/vacuum-q8-max-pro-robot-supurge-siyah-p-1100208587","Renk: siyah"],
+    ["TY","EMAYS TEKNOLOJİ",17800,0,"resmi_uretici",24,"/roborock/vacuum-q8-max-pro-robot-supurge-beyaz-p-929960380?merchantId=997955","Renk: beyaz"],
+    ["TY","SmartHanem",17899,0,"resmi_uretici",24,"/roborock/vacuum-q8-max-pro-robot-supurge-beyaz-p-929960380?merchantId=981173","Renk: beyaz"],
+    ["HB","Bircem",16983,null,"belirsiz",null,"/roborock-q8-max-pro-akilli-robot-supurge-p-HBCV00008MBGQE","Sepette %10 indirimli fiyat (liste fiyatı 18.870 TL)"]
+   ]},
+  {"id":"P08","kategori":"robot-supurge","marka":"Roborock","model":"S8 Pro","gtin":"6936905901545","specs":{"emis_pa":10000,"haritalama":"Lidar","paspas":1,"istasyon":0},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","Mesoy",15100,0,"resmi_uretici",24,"/roborock/s8-pro-robot-supurge-10-000-pa-titresimli-mop-beyaz-p-930469542",""],
+    ["TY","Marché De 216",15140,0,"resmi_uretici",24,"/roborock/s8-pro-robot-supurge-10-000-pa-titresimli-mop-beyaz-p-930469542?merchantId=1025159",""],
+    ["TY","STERK TEKNOLOJİ",15149,0,"resmi_uretici",24,"/roborock/s8-pro-robot-supurge-10-000-pa-titresimli-mop-beyaz-p-930469542?merchantId=1337593",""],
+    ["TY","VATAN BİLGİSAYAR",15149,0,"resmi_uretici",24,"/roborock/s8-pro-robot-supurge-10-000-pa-titresimli-mop-beyaz-p-930469542?merchantId=624588",""],
+    ["TY","tekno-loji",15150,0,"resmi_uretici",24,"/roborock/s8-pro-robot-supurge-10-000-pa-titresimli-mop-beyaz-p-930469542?merchantId=805934",""],
+    ["TY","Koycebine",15199,0,"resmi_uretici",24,"/roborock/s8-pro-robot-supurge-10-000-pa-titresimli-mop-beyaz-p-930469542?merchantId=105150",""],
+    ["HB","İnciBilişim",14980.5,null,"belirsiz",null,"/roborock-s8-pro-akilli-robot-supurge-beyaz-p-HBCV00008MAIV2","Sepette %10 indirimli fiyat (liste fiyatı 16.645 TL)"]
+   ]},
+  {"id":"P09","kategori":"robot-supurge","marka":"Dreame","model":"L10s Pro Gen 2","gtin":"6976233674698","specs":{"emis_pa":7000,"haritalama":"Lidar","paspas":1,"istasyon":0},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","CVZ TEKNOLOJİ",9399,0,"resmi_uretici",24,"/dreame/l10s-pro-gen-2-robot-supurge-beyaz-7-000pa-emis-gucu-p-862457991",""],
+    ["TY","Trendsin Evim",9448,0,"resmi_uretici",24,"/dreame/l10s-pro-gen-2-robot-supurge-beyaz-7-000pa-emis-gucu-p-862457991?merchantId=568895",""],
+    ["TY","BittiBitiyor",9449,0,"resmi_uretici",24,"/dreame/l10s-pro-gen-2-robot-supurge-beyaz-7-000pa-emis-gucu-p-862457991?merchantId=104870",""],
+    ["TY","Mioday",9465.05,0,"resmi_uretici",24,"/dreame/l10s-pro-gen-2-robot-supurge-beyaz-7-000pa-emis-gucu-p-862457991?merchantId=746625",""],
+    ["TY","Elektroshopping",9489.55,0,"resmi_uretici",24,"/dreame/l10s-pro-gen-2-robot-supurge-beyaz-7-000pa-emis-gucu-p-862457991?merchantId=1223206",""],
+    ["TY","ANKA CENTER",9600,0,"resmi_uretici",24,"/dreame/l10s-pro-gen-2-robot-supurge-beyaz-7-000pa-emis-gucu-p-862457991?merchantId=1357461",""],
+    ["HB","Hepsiburada",8999,null,"belirsiz",null,"/dreame-l10s-pro-gen-2-robot-supurge-beyaz-pm-HBC00006Y1GJV",""]
+   ]},
+  {"id":"P10","kategori":"robot-supurge","marka":"Xiaomi","model":"Robot Vacuum H40","gtin":"6932554432416","specs":{"emis_pa":10000,"haritalama":"Lidar","paspas":1,"istasyon":1},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","ZELA",18429.05,0,"resmi_uretici",24,"/xiaomi/robot-vacuum-h40-akilli-robot-supurge-mop-10000pa-xiaomi-turkiye-garantili-p-969731936",""],
+    ["TY","GSMistore",18499,0,"resmi_uretici",24,"/xiaomi/robot-vacuum-h40-akilli-robot-supurge-mop-10000pa-xiaomi-turkiye-garantili-p-969731936?merchantId=1087393",""],
+    ["TY","e-koz",18700,0,"resmi_uretici",24,"/xiaomi/robot-vacuum-h40-akilli-robot-supurge-mop-10000pa-xiaomi-turkiye-garantili-p-969731936?merchantId=327785",""],
+    ["TY","AYPA TEKNOLOJİ",19999,0,"resmi_uretici",24,"/xiaomi/robot-vacuum-h40-akilli-robot-supurge-mop-10000pa-xiaomi-turkiye-garantili-p-969731936?merchantId=254670",""],
+    ["HB","ZELA",18449.1,null,"resmi_uretici",null,"/robot-vacuum-h40-akilli-robot-supurge-mop-10000pa-xiaomi-turkiye-garantili-pm-HBC00009P1C4C","Sepette %10 indirimli fiyat (liste fiyatı 20.499 TL). İlanda Xiaomi Türkiye garantili yazıyor"]
+   ]},
+  {"id":"P11","kategori":"robot-supurge","marka":"Xiaomi","model":"Robot Vacuum 5","gtin":"6932554439897","specs":{"emis_pa":20000,"haritalama":"Lidar","paspas":1,"istasyon":1},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","Trendyol",29999,null,"resmi_uretici",24,"/xiaomi/robot-vacuum-5-beyaz-akilli-robot-supurge-20000-pa-emis-gucu-xiaomi-turkiye-garantili-p-1102469506","Satıcı Trendyol"],
+    ["TY","VATAN BİLGİSAYAR",36996,0,"resmi_uretici",24,"/xiaomi/robot-vacuum-5-beyaz-akilli-robot-supurge-20000-pa-emis-gucu-xiaomi-turkiye-garantili-p-1102469506?merchantId=624588",""],
+    ["HB","Reset Mobile",35997.3,null,"resmi_uretici",null,"/robot-vacuum-5-akilli-robot-supurge-xiaomi-turkiye-garantili-pm-HBC0000A67933","Sepette %10 indirimli fiyat (liste fiyatı 39.997 TL). İlanda Xiaomi TR garantili yazıyor"]
+   ]},
+  {"id":"P12","kategori":"televizyon","marka":"Xiaomi","model":"TV A Pro 55 (2026)","gtin":"","specs":{"ekran_inc":55,"cozunurluk":"4K","panel":"QLED","yenileme_hz":120,"smart":1},
+   "aciklama":"Bu model iki farklı barkodla satılıyor; ilan başlıkları ve özellikleri aynı.",
+   "teklifler":[
+    ["TY","Göksu Authorized Store",28900,0,"resmi_uretici",24,"/xiaomi/tv-a-pro-55-2026-55-inc-140-4k-ultra-hd-qled-google-smart-tv-p-1221253135",""],
+    ["TY","RAHEL TEKNO CONCEPT",29000,0,"resmi_uretici",24,"/xiaomi/tv-a-pro-55-2026-55-inc-140-4k-ultra-hd-qled-google-smart-tv-p-1221253135?merchantId=1220532",""],
+    ["TY","Teknopa Gsm",30040,0,"resmi_uretici",24,"/xiaomi/tv-a-pro-55-2026-55-inc-140-4k-ultra-hd-qled-google-smart-tv-p-1221253135?merchantId=507101",""],
+    ["TY","Xiaomi Resmi Mağazası",30999,0,"resmi_uretici",24,"/xiaomi/tv-a-pro-55-2026-55-140-4k-ultra-hd-qled-google-smart-120hz-game-boost-uydu-alicili-tv-p-1042492764",""],
+    ["HB","Hepsiburada",25999,null,"belirsiz",null,"/xiaomi-tv-a-pro-55-2026-55-140-4k-ultra-hd-qled-google-smart-120hz-game-boost-uydu-alicili-tv-p-HBCV0000AQID07",""]
+   ]},
+  {"id":"P13","kategori":"televizyon","marka":"Xiaomi","model":"TV A 55 (2026)","gtin":"","specs":{"ekran_inc":55,"cozunurluk":"4K","panel":"LED","yenileme_hz":120,"smart":1},
+   "aciklama":"Bu model iki farklı barkodla satılıyor; ilan başlıkları ve özellikleri aynı.",
+   "teklifler":[
+    ["TY","Xiaomi Resmi Mağazası",23999,0,"resmi_uretici",24,"/xiaomi/tv-a-55-2026-55-140-4k-ultra-hd-google-smart-120hz-game-boost-airplay-destekli-uydu-alicili-tv-p-1042480233",""],
+    ["TY","Teknopa Gsm",32960,0,"resmi_uretici",24,"/xiaomi/tv-a-55-2026-55-140-4k-ultra-hd-google-smart-120hz-game-boost-airplay-destekli-uydu-alicili-tv-p-1042480233?merchantId=507101",""],
+    ["HB","Xiaomi Resmi Mağazası",22999,null,"resmi_uretici",null,"/xiaomi-tv-a-55-2026-55-140-4k-ultra-hd-google-smart-airplay-destekli-uydu-alicili-tv-p-HBCV0000HLGABS","Markanın resmi mağazası"]
+   ]},
+  {"id":"P14","kategori":"televizyon","marka":"Xiaomi","model":"TV A 65 (2026)","gtin":"","specs":{"ekran_inc":65,"cozunurluk":"4K","panel":"LED","yenileme_hz":120,"smart":1},
+   "aciklama":"Bu model iki farklı barkodla satılıyor; ilan başlıkları ve özellikleri aynı.",
+   "teklifler":[
+    ["TY","Xiaomi Resmi Mağazası",33999,0,"resmi_uretici",24,"/xiaomi/tv-a-65-2026-65-165-4k-ultra-hd-google-smart-120hz-game-boost-airplay-destekli-uydu-alicili-tv-p-1042487377",""],
+    ["HB","Xiaomi Resmi Mağazası",31999,null,"resmi_uretici",null,"/xiaomi-tv-a-65-2026-65-165-4k-ultra-hd-google-smart-airplay-destekli-uydu-alicili-tv-p-HBCV0000HLG71C","Sepette indirimli fiyat (liste fiyatı 33.999 TL). Markanın resmi mağazası"]
+   ]},
+  {"id":"P15","kategori":"televizyon","marka":"Onvo","model":"55VQ90F3UA","gtin":"","specs":{"ekran_inc":55,"cozunurluk":"4K","panel":"QLED","smart":1},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","KİRİKLER BEYAZ EŞYA",22499,0,"resmi_uretici",24,"/onvo/55vq90f3ua-55-140-ekran-uydu-alicili-4k-ultra-hd-google-smart-qled-tv-p-1071837385",""],
+    ["TY","NEXA E TİCARET",23450,0,"resmi_uretici",24,"/onvo/55vq90f3ua-55-140-ekran-uydu-alicili-4k-ultra-hd-google-smart-qled-tv-p-1071837385?merchantId=1307942",""],
+    ["TY","KILIÇ TİC.",23500,0,"resmi_uretici",24,"/onvo/55vq90f3ua-55-140-ekran-uydu-alicili-4k-ultra-hd-google-smart-qled-tv-p-1071837385?merchantId=957355",""],
+    ["TY","Kapdiyo",23999,0,"resmi_uretici",24,"/onvo/55vq90f3ua-55-140-ekran-uydu-alicili-4k-ultra-hd-google-smart-qled-tv-p-1071837385?merchantId=807735",""],
+    ["HB","Hepsiburada",19999,null,"belirsiz",null,"/onvo-55vq90f3ua-55-140-ekran-uydu-alicili-4k-ultra-hd-google-smart-qled-tv-p-HBCV0000BGCSEW",""]
+   ]},
+  {"id":"P16","kategori":"televizyon","marka":"Thomson","model":"55QG7C14","gtin":"8684659112165","specs":{"ekran_inc":55,"cozunurluk":"4K","panel":"QLED Pro","yenileme_hz":144,"smart":1},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","Thomson Türkiye",34199,0,"resmi_uretici",36,"/thomson/55qg7c14-55-139-ekran-uydu-alicili-4k-ultra-hd-google-smart-144-hz-qled-pro-tv-p-959059130","Markanın resmi mağazası"],
+    ["HB","Thomson Türkiye",33998.99,null,"resmi_uretici",null,"/thomson-55-139-ekran-uydu-alicili-4k-ultra-hd-google-smart-qled-pro-tv-55qg7c14-p-HBCV00009GLD8H","Sepette %10 indirimli fiyat (liste fiyatı 37.776,66 TL). Markanın resmi mağazası"]
+   ]},
+  {"id":"P17","kategori":"televizyon","marka":"Thomson","model":"55UG5C14","gtin":"8684659112059","specs":{"ekran_inc":55,"cozunurluk":"4K","panel":"LED","smart":1},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","Thomson Türkiye",24199,0,"resmi_uretici",24,"/thomson/55-139-ekran-uydu-alicili-ultra-hd-4k-google-smart-led-tv-55ug5c14-p-898510796","Markanın resmi mağazası"],
+    ["HB","Thomson Türkiye",23999,null,"resmi_uretici",null,"/thomson-55ug5c14-55-139-cm-4k-uhd-google-tv-pm-HBC00007IAK1V","Sepette %10 indirimli fiyat (liste fiyatı 26.665,55 TL). Markanın resmi mağazası"]
+   ]},
+  {"id":"P18","kategori":"televizyon","marka":"Grundig","model":"65 GQ 800A","gtin":"8690842832277","specs":{"ekran_inc":65,"cozunurluk":"4K","panel":"QLED","smart":1},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","Grundig Türkiye",43199.1,0,"resmi_uretici",36,"/grundig/65-gq-800a-65-164-ekran-uydu-alicili-4k-ultra-hd-google-smart-qled-tv-p-1099240624","Markanın resmi mağazası"],
+    ["HB","Hepsiburada",39999,null,"belirsiz",null,"/grundig-65-gq-800a-65-164-ekran-uydu-alicili-4k-ultra-hd-google-smart-qled-tv-p-HBCV0000AL5E37",""]
+   ]},
+  {"id":"P19","kategori":"televizyon","marka":"Samsung","model":"43U8000H","gtin":"8806097966043","specs":{"ekran_inc":43,"cozunurluk":"4K","panel":"Crystal UHD (LED)","smart":1},
+   "aciklama":"",
+   "teklifler":[
+    ["TY","Teknosa",24741.11,0,"resmi_uretici",24,"/samsung/crystal-uhd-43u8000h-43-109-ekran-uydu-alicili-4k-vision-ai-smart-tv-2026-p-1153332069",""],
+    ["TY","Teknofish",24749,0,"resmi_uretici",24,"/samsung/crystal-uhd-43u8000h-43-109-ekran-uydu-alicili-4k-vision-ai-smart-tv-2026-p-1153332069?merchantId=107353",""],
+    ["TY","Marketkolik",25686,0,"resmi_uretici",24,"/samsung/crystal-uhd-43u8000h-43-109-ekran-uydu-alicili-4k-vision-ai-smart-tv-2026-p-1153332069?merchantId=936587",""],
+    ["HB","Teknofish",23673.24,null,"belirsiz",null,"/samsung-43u8000h-43-109-ekran-uydu-alicili-4k-ultra-hd-tizen-cuhd-tv-p-HBCV0000EXCA1A","Sepette %5 indirimli fiyat (liste fiyatı 24.919,20 TL)"]
+   ]}
+ ]
+}

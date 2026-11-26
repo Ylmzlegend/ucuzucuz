@@ -1,0 +1,473 @@
+{
+  "site_name": "ucuzucuz",
+  "tagline": "E-bisiklet, robot süpürge ve televizyon tekliflerini Trendyol ve Hepsiburada genelinde, kargo ve garanti türüyle karşılaştır.",
+  "base_url": "https://ucuzucuz.com",
+  "demo": false,
+  "web_fonts": true,
+  "fresh_days": 1,
+  "stale_days_warn": 7,
+  "stale_days_exclude": 14,
+  "history_window_days": 90,
+  "drop_window_days": 30,
+  "drop_min_pct": 3,
+  "iletisim": "",
+  "veri_notu": "Fiyatlar Trendyol ve Hepsiburada ürün sayfalarından, bir kişinin tarayıcıda göreceği haliyle okunuyor; her teklifin yanında kontrol tarihi yazıyor. Hepsiburada'daki sepette indirimli fiyatlar herkese uygulanan fiyattır, yalnızca Premium üyelere özel indirimleri hesaba katmıyoruz. Kargo ücreti ilanda net değilse \"Belirtilmemiş\" yazıyor ve toplam fiyata eklenmiyor. Satıcılar fiyat listesini bize doğrudan da iletebilir.",
+  "gelir_notu": "ucuzucuz şu an satıcılardan ücret almıyor.",
+  "garanti_tipleri": {
+    "resmi_uretici": "Resmi garanti",
+    "ithalatci": "İthalatçı garantisi",
+    "satici": "Satıcı garantisi",
+    "belirsiz": "Garanti türü belirtilmemiş"
+  },
+  "satici_tipleri": {
+    "pazaryeri": "Pazaryeri",
+    "magaza": "Mağaza",
+    "uretici": "Üretici"
+  },
+  "categories": {
+    "e-bisiklet": {
+      "ad": "E-bisiklet",
+      "ikon": "bisiklet",
+      "baslik": "E-bisiklet fiyatları",
+      "aciklama": "Şehir, katlanır ve arazi modelleri. Her teklif kargo dahil toplam tutara göre sıralanır.",
+      "ozellikler": [
+        {
+          "key": "motor_w",
+          "ad": "Motor gücü",
+          "birim": "W",
+          "tip": "sayi",
+          "ozet": true
+        },
+        {
+          "key": "batarya_wh",
+          "ad": "Batarya",
+          "birim": "Wh",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true
+        },
+        {
+          "key": "menzil_km",
+          "ad": "Menzil",
+          "birim": "km",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true,
+          "ozet_ek": "menzil",
+          "iddia": true
+        },
+        {
+          "key": "hiz_kmh",
+          "ad": "Azami hız",
+          "birim": "km/s",
+          "tip": "sayi"
+        },
+        {
+          "key": "agirlik_kg",
+          "ad": "Ağırlık",
+          "birim": "kg",
+          "tip": "sayi",
+          "iyi": "min"
+        },
+        {
+          "key": "jant_inc",
+          "ad": "Jant",
+          "birim": "inç",
+          "tip": "sayi"
+        },
+        {
+          "key": "katlanabilir",
+          "ad": "Katlanabilir",
+          "tip": "evet_hayir",
+          "ozet": true,
+          "ozet_ek": "katlanabilir"
+        }
+      ],
+      "deger": {
+        "key": "batarya_wh",
+        "etiket": "her Wh için"
+      },
+      "filtreler": [
+        {
+          "ad": "250 W ve altı",
+          "key": "motor_w",
+          "op": "lte",
+          "deger": 250
+        },
+        {
+          "ad": "Katlanabilir",
+          "key": "katlanabilir",
+          "op": "eq",
+          "deger": 1
+        }
+      ],
+      "yasal": {
+        "key": "motor_w",
+        "esik": 250,
+        "kisa": "250 W üzeri, kullanım koşullarını doğrula",
+        "not": "Motor gücü {v} W. Satıcı sayfalarında 250 W, ruhsatsız ve ehliyetsiz kullanımın sınırı olarak geçiyor. Bu modelin ehliyet veya plaka gerektirip gerektirmediğini satın almadan önce resmi mevzuattan doğrula."
+      }
+    },
+    "robot-supurge": {
+      "ad": "Robot süpürge",
+      "ikon": "robot",
+      "baslik": "Robot süpürge fiyatları",
+      "aciklama": "Robot süpürge teklifleri, kargo dahil toplam tutara ve garanti türüne göre.",
+      "ozellikler": [
+        {
+          "key": "emis_pa",
+          "ad": "Emiş gücü",
+          "birim": "Pa",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true,
+          "ozet_ek": "emiş"
+        },
+        {
+          "key": "calisma_dk",
+          "ad": "Çalışma süresi",
+          "birim": "dk",
+          "tip": "sayi",
+          "iyi": "max",
+          "iddia": true
+        },
+        {
+          "key": "haritalama",
+          "ad": "Haritalama",
+          "tip": "metin",
+          "ozet": true
+        },
+        {
+          "key": "paspas",
+          "ad": "Paspas",
+          "tip": "evet_hayir",
+          "ozet": true,
+          "ozet_ek": "paspaslı"
+        },
+        {
+          "key": "istasyon",
+          "ad": "Otomatik boşaltma istasyonu",
+          "tip": "evet_hayir",
+          "ozet": true,
+          "ozet_ek": "istasyonlu"
+        }
+      ],
+      "filtreler": [
+        {
+          "ad": "Paspaslı",
+          "key": "paspas",
+          "op": "eq",
+          "deger": 1
+        },
+        {
+          "ad": "Otomatik boşaltma istasyonlu",
+          "key": "istasyon",
+          "op": "eq",
+          "deger": 1
+        }
+      ]
+    },
+    "televizyon": {
+      "ad": "Televizyon",
+      "ikon": "tv",
+      "baslik": "Televizyon fiyatları",
+      "aciklama": "Televizyon teklifleri, kargo dahil toplam tutara ve garanti türüne göre.",
+      "ozellikler": [
+        {
+          "key": "ekran_inc",
+          "ad": "Ekran",
+          "birim": "inç",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true
+        },
+        {
+          "key": "cozunurluk",
+          "ad": "Çözünürlük",
+          "tip": "metin",
+          "ozet": true
+        },
+        {
+          "key": "panel",
+          "ad": "Panel",
+          "tip": "metin",
+          "ozet": true
+        },
+        {
+          "key": "yenileme_hz",
+          "ad": "Yenileme hızı",
+          "birim": "Hz",
+          "tip": "sayi",
+          "iyi": "max"
+        },
+        {
+          "key": "smart",
+          "ad": "Akıllı TV",
+          "tip": "evet_hayir"
+        }
+      ],
+      "deger": {
+        "key": "ekran_inc",
+        "etiket": "her inç için"
+      },
+      "filtreler": [
+        {
+          "ad": "55 inç ve üstü",
+          "key": "ekran_inc",
+          "op": "gte",
+          "deger": 55
+        },
+        {
+          "ad": "120 Hz ve üstü",
+          "key": "yenileme_hz",
+          "op": "gte",
+          "deger": 120
+        }
+      ]
+    },
+    "e-scooter": {
+      "ad": "E-scooter",
+      "ikon": "scooter",
+      "baslik": "E-scooter fiyatları",
+      "aciklama": "Günlük ulaşım için e-scooter modelleri. Her teklif kargo dahil toplam tutara göre sıralanır.",
+      "ozellikler": [
+        {
+          "key": "motor_w",
+          "ad": "Motor gücü",
+          "birim": "W",
+          "tip": "sayi",
+          "ozet": true
+        },
+        {
+          "key": "batarya_wh",
+          "ad": "Batarya",
+          "birim": "Wh",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true
+        },
+        {
+          "key": "menzil_km",
+          "ad": "Menzil",
+          "birim": "km",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true,
+          "ozet_ek": "menzil",
+          "iddia": true
+        },
+        {
+          "key": "hiz_kmh",
+          "ad": "Azami hız",
+          "birim": "km/s",
+          "tip": "sayi"
+        },
+        {
+          "key": "agirlik_kg",
+          "ad": "Ağırlık",
+          "birim": "kg",
+          "tip": "sayi",
+          "iyi": "min"
+        },
+        {
+          "key": "jant_inc",
+          "ad": "Teker",
+          "birim": "inç",
+          "tip": "sayi"
+        },
+        {
+          "key": "katlanabilir",
+          "ad": "Katlanabilir",
+          "tip": "evet_hayir"
+        }
+      ],
+      "deger": {
+        "key": "batarya_wh",
+        "etiket": "her Wh için"
+      },
+      "filtreler": [
+        {
+          "ad": "15 kg ve altı",
+          "key": "agirlik_kg",
+          "op": "lte",
+          "deger": 15
+        }
+      ],
+      "genel_not": "Yaş sınırı, hız ve kullanılabilecek yol türü gibi kullanım koşulları için satın almadan önce güncel mevzuatı kontrol et."
+    },
+    "telefon": {
+      "ad": "Telefon",
+      "ikon": "telefon",
+      "baslik": "Telefon fiyatları",
+      "aciklama": "Akıllı telefon teklifleri, kargo dahil toplam tutara ve garanti türüne göre.",
+      "ozellikler": [
+        {
+          "key": "depolama_gb",
+          "ad": "Depolama",
+          "birim": "GB",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true
+        },
+        {
+          "key": "ram_gb",
+          "ad": "RAM",
+          "birim": "GB",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true,
+          "ozet_ek": "RAM"
+        },
+        {
+          "key": "ekran_inc",
+          "ad": "Ekran",
+          "birim": "inç",
+          "tip": "sayi",
+          "ozet": true,
+          "ozet_ek": "ekran"
+        },
+        {
+          "key": "batarya_mah",
+          "ad": "Batarya",
+          "birim": "mAh",
+          "tip": "sayi",
+          "iyi": "max"
+        },
+        {
+          "key": "kamera_mp",
+          "ad": "Ana kamera",
+          "birim": "MP",
+          "tip": "sayi",
+          "iyi": "max"
+        },
+        {
+          "key": "cift_sim",
+          "ad": "Çift SIM",
+          "tip": "evet_hayir"
+        }
+      ],
+      "filtreler": [
+        {
+          "ad": "256 GB ve üstü",
+          "key": "depolama_gb",
+          "op": "gte",
+          "deger": 256
+        },
+        {
+          "ad": "Çift SIM",
+          "key": "cift_sim",
+          "op": "eq",
+          "deger": 1
+        }
+      ]
+    },
+    "dizustu": {
+      "ad": "Dizüstü",
+      "ikon": "laptop",
+      "baslik": "Dizüstü bilgisayar fiyatları",
+      "aciklama": "Dizüstü bilgisayar teklifleri, kargo dahil toplam tutara ve garanti türüne göre.",
+      "ozellikler": [
+        {
+          "key": "islemci",
+          "ad": "İşlemci",
+          "tip": "metin",
+          "ozet": true
+        },
+        {
+          "key": "ram_gb",
+          "ad": "RAM",
+          "birim": "GB",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true,
+          "ozet_ek": "RAM"
+        },
+        {
+          "key": "ssd_gb",
+          "ad": "SSD",
+          "birim": "GB",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true,
+          "ozet_ek": "SSD"
+        },
+        {
+          "key": "ekran_inc",
+          "ad": "Ekran",
+          "birim": "inç",
+          "tip": "sayi"
+        },
+        {
+          "key": "ekran_karti",
+          "ad": "Ekran kartı",
+          "tip": "metin"
+        },
+        {
+          "key": "agirlik_kg",
+          "ad": "Ağırlık",
+          "birim": "kg",
+          "tip": "sayi",
+          "iyi": "min"
+        }
+      ],
+      "filtreler": [
+        {
+          "ad": "16 GB RAM ve üstü",
+          "key": "ram_gb",
+          "op": "gte",
+          "deger": 16
+        },
+        {
+          "ad": "1,5 kg ve altı",
+          "key": "agirlik_kg",
+          "op": "lte",
+          "deger": 1.5
+        }
+      ]
+    },
+    "konsol": {
+      "ad": "Oyun konsolu",
+      "ikon": "konsol",
+      "baslik": "Oyun konsolu fiyatları",
+      "aciklama": "Oyun konsolu teklifleri, kargo dahil toplam tutara ve garanti türüne göre.",
+      "ozellikler": [
+        {
+          "key": "depolama_gb",
+          "ad": "Depolama",
+          "birim": "GB",
+          "tip": "sayi",
+          "iyi": "max",
+          "ozet": true
+        },
+        {
+          "key": "cozunurluk",
+          "ad": "Azami çözünürlük",
+          "tip": "metin",
+          "ozet": true
+        },
+        {
+          "key": "disk_surucu",
+          "ad": "Disk sürücü",
+          "tip": "evet_hayir",
+          "ozet": true,
+          "ozet_ek": "disk sürücülü"
+        },
+        {
+          "key": "kol_sayisi",
+          "ad": "Kutudan çıkan kol",
+          "birim": "adet",
+          "tip": "sayi",
+          "iyi": "max"
+        }
+      ],
+      "filtreler": [
+        {
+          "ad": "Disk sürücülü",
+          "key": "disk_surucu",
+          "op": "eq",
+          "deger": 1
+        }
+      ]
+    }
+  }
+}

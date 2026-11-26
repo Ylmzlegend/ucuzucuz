@@ -1,0 +1,7 @@
+﻿id,marka,model,motor_w,batarya_wh,menzil_km,hiz_kmh,agirlik_kg,jant_inc,katlanabilir,gtin,aciklama
+P01,RKS,RS3 Pro X,250,360,40,25,24,20,1,,"Satıcı ilanlarına göre 36 V 7,5 veya 10 Ah batarya seçenekleriyle satılıyor; batarya değeri 10 Ah'e göre."
+P02,RKS,BN5 Pro,250,270,35,25,,20,1,,"Satıcı ilanlarında 36 V 7,5 Ah ile 10 Ah arasında farklı batarya seçenekleri geçiyor; batarya değeri 7,5 Ah'e göre."
+P03,RKS,Nitro Pro,250,,50,25,,20,1,,Kalın tekerli katlanır model.
+P04,Skyjet,Robusto Premium,750,624,45,25,,20,1,,İlanlarda 750 W motor ve 48 V 13 Ah batarya yazıyor.
+P05,Skyjet,GTIII Pro,,,60,,,20,1,,"İlanlar ayna, çanta veya el gazı hediyesiyle satılıyor; motor gücü ilanlarda net değil."
+P06,Ape Ryder,Mandrill Ultra,,720,60,25,,20,0,,Motor gücü ilanlarda 250 W ve 1000 W olarak farklı yazılıyor; satın almadan önce satıcıdan yazılı teyit al. Batarya 48 V 15 Ah.
